@@ -42,3 +42,27 @@ void quickSort(float arr[], int baixo, int alto) {
         quickSort(arr, pi + 1, alto);
     }
 }
+int main() {
+    int tamanho = 10;
+    float notasOriginais[10] = {7.5, 3.2, 9.8, 5.0, 8.4, 6.1, 10.0, 4.5, 7.0, 8.9};
+    float notasBubble[10], notasQuick[10];
+    
+    for(int i = 0; i < tamanho; i++) {
+        notasBubble[i] = notasOriginais[i];
+        notasQuick[i] = notasOriginais[i];
+    }
+
+    printf("--- Sistema Escolar: Classificacao de Notas ---\n\n");
+    printf("Notas ANTES da ordenacao:\n");
+    imprimirArray(notasOriginais, tamanho);
+
+    printf("\nNotas APOS ordenacao (BUBBLE SORT - Crescente):\n");
+    bubbleSort(notasBubble, tamanho);
+    imprimirArray(notasBubble, tamanho);
+
+    printf("\nNotas APOS ordenacao (QUICK SORT - Crescente):\n");
+    quickSort(notasQuick, 0, tamanho - 1);
+    imprimirArray(notasQuick, tamanho);
+
+    return 0;
+}
